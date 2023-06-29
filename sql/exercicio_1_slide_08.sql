@@ -20,7 +20,7 @@ create table programador (
 create table projeto (
     codigo int not null primary key auto_increment,
     nome varchar(100) not null,
-    cpf_programador char(11) not null,
+    cpf_programador char(11) not null unique,
     data_coordenacao datetime not null default now(),
     foreign key(cpf_programador) references programador(cpf)
         on update cascade on delete restrict
