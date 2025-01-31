@@ -10,8 +10,7 @@ public abstract class AbstratoDAO {
 
 	public AbstratoDAO() {
 		try {
-			conexao = DriverManager.getConnection("jdbc:mysql://10.225.0.4:3306/1812384_agenda", "1812384",
-					"felipe@123");
+			conexao = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/agenda", "root", "123456");
 		} catch (SQLException e) {
 			System.out.println("Erro conectando ao banco de dados!");
 		}

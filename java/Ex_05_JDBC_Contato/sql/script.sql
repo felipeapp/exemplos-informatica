@@ -1,7 +1,7 @@
-drop database if exists 1812384_agenda;
-create database 1812384_agenda;
+drop database if exists agenda;
+create database agenda;
 
-use 1812384_agenda;
+use agenda;
 
 create table contato (
     id int primary key auto_increment not null,
