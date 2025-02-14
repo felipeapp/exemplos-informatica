@@ -1,7 +1,7 @@
-drop database if exists 1812384_acesso;
-create database 1812384_acesso;
+drop database if exists acesso;
+create database acesso;
 
-use 1812384_acesso;
+use acesso;
 
 create table usuario (
     id int primary key auto_increment not null,
