@@ -2,7 +2,9 @@ package br.ifrn.sga.acesso.visao.terminal;
 
 import java.util.Scanner;
 
+import br.ifrn.sga.acesso.modelo.dao.SalaDAO;
 import br.ifrn.sga.acesso.modelo.dao.UsuarioDAO;
+import br.ifrn.sga.acesso.modelo.entidade.Sala;
 import br.ifrn.sga.acesso.modelo.entidade.Usuario;
 
 public class UsuarioUtil {
@@ -39,6 +41,43 @@ public class UsuarioUtil {
 				System.out.println("Usuário não encontrado!");
 			} else {
 				System.out.println(u);
+			}
+		}
+	}
+
+	public static void lerDadosBuscarPorSala(Scanner leitor) {
+		System.out.print("Digite o número da sala para buscar seus usuários: ");
+		var numero = leitor.nextInt();
+
+		try (SalaDAO dao_sala = new SalaDAO()) {
+			Sala s = dao_sala.buscarPorNumero(numero);
+
+			if (s == null) {
+				System.out.println("Sala não encontrada!");
+			} else {
+				System.out.println("Usuários da sala " + s + ":");
+
+				try (UsuarioDAO dao_usuario = new UsuarioDAO()) {
+					var usuarios = dao_usuario.buscarPorSala(numero);
+
+					if (usuarios.isEmpty()) {
+						System.out.println("Nenhum usuário encontrado!");
+					} else {
+						usuarios.forEach(System.out::println);
+					}
+				}
+			}
+		}
+	}
+
+	public static void gerarRelatorio() {
+		try (UsuarioDAO dao = new UsuarioDAO()) {
+			var usuarios = dao.buscarTodos();
+
+			if (usuarios.isEmpty()) {
+				System.out.println("Não há usuários cadastrados!");
+			} else {
+				usuarios.forEach(System.out::println);
 			}
 		}
 	}

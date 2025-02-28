@@ -49,16 +49,17 @@ public class Terminal {
 			} else if (opcao == 7) {
 				SalaUtil.lerDadosBuscarPorUsuario(leitor);
 			} else if (opcao == 8) {
-
+				UsuarioUtil.lerDadosBuscarPorSala(leitor);
 			} else if (opcao == 9) {
-
+				PermissaoUtil.lerDadosRemoverSemVerificacao(leitor);
 			} else if (opcao == 10) {
-
+				PermissaoUtil.lerDadosRemoverComVerificacao(leitor);
 			} else if (opcao == 11) {
-
+				UsuarioUtil.gerarRelatorio();
 			} else if (opcao == 12) {
-
+				SalaUtil.gerarRelatorio();
 			} else if (opcao == 13) {
+				PermissaoUtil.gerarRelatorio();
 			} else {
 				System.out.println("Opção inválida, tente novamente!");
 			}

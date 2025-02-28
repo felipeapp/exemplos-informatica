@@ -67,4 +67,16 @@ public class SalaUtil {
 		}
 	}
 
+	public static void gerarRelatorio() {
+		try (SalaDAO dao = new SalaDAO()) {
+			var salas = dao.buscarTodos();
+
+			if (salas.isEmpty()) {
+				System.out.println("Nenhuma sala encontrada!");
+			} else {
+				salas.forEach(System.out::println);
+			}
+		}
+	}
+
 }
