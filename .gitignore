@@ -1,11 +1,4 @@
-# Pycharm ignored files and directories
-.idea
-**/*.db
-**/__pycache__
-
-# Eclipse ignored files and directories
-**/.metadata
-**/.recommenders
-**/RemoteSystemsTempFiles
+java/.metadata
+java/**/.*
 **/bin
 **/build
