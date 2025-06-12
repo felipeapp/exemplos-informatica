@@ -1,6 +1,6 @@
-# Programação Com Acesso a Banco de Dados 2025
+# Programação Com Acesso a Banco de Dados
 
-Exemplos da disciplina Programação Com Acesso a Banco de Dados para o curso Técnico Integrado em Informática do Campus IFRN de São Gonçalo do Amarante.
+Exemplos da disciplina Programação Com Acesso a Banco de Dados (2025) para o curso Técnico Integrado em Informática do Campus IFRN de São Gonçalo do Amarante.
 
 ## Acesso ao Servidor MySQL do LADIR
 
